@@ -1,5 +1,0 @@
-function ButtonBase(){
-    return(
-        <></>
-    )
-}
