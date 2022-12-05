@@ -21,7 +21,7 @@ function ButtonBase(props){
 function PrimaryButton(props){
     const {children,icon,...restProps} = props
     return(
-        <ButtonBase {...restProps} >
+        <ButtonBase  {...restProps} className="text-secondary-white bg-primary-blue">
             {children}
             <span>
                 {icon}  
