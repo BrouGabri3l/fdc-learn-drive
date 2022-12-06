@@ -1,12 +1,13 @@
-import React from  'react'
-import {Button} from '../components/Button'
-export default{
-    title:'Buttons',
-    component:Button.Base,
-}    
-const Template = (args) => <Button.Base {...args} />;
+import React from 'react'
+import Button from '../components/Button'
+export default {
+    title: 'Buttons',
+    component: Button.Root,
+}
+const Template = (args) => <Button.Primary {...args} />;
 export const Primary = Template.bind({})
 Primary.args = {
-    children:(<Button.Primary >Primary Button</Button.Primary>),
+    children:"Primary Button",
+    icon:"/Frame.svg"
+        
 }
-export const Secondary = Template.bind({})

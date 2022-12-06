@@ -32,6 +32,9 @@ module.exports = {
         },
         "error":"#D32B2B",
         "success":"#4ABA55"
+      },
+      fontFamily:{
+        openSans:['var(--font-openSans)']
       }
     },
   },
