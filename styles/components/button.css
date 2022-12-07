@@ -1,0 +1,19 @@
+.btn {
+  @apply font-bold font-openSans text-secondary-white text-base text-right uppercase pl-6 flex items-stretch;
+}
+.btn-primary,
+.btn-secondary {
+  @apply bg-primary-blue;
+}
+.btn-primary:disabled {
+  @apply bg-secondary-gray-medium;
+}
+.btn-secondary {
+  @apply flex-row-reverse;
+}
+.btn-icon-bg {
+  @apply bg-primary-black-blue;
+}
+.btn-outline {
+  @apply flex-row-reverse outline outline-1 outline-primary-black-blue text-primary-black-blue;
+}

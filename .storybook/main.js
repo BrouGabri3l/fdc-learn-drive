@@ -12,6 +12,9 @@ module.exports = {
       name: '@storybook/addon-postcss',
       options: {
         postcssLoaderOptions: {
+          postcssOptions: {
+            plugins: [require.resolve('tailwindcss')],
+          },
           implementation: require('postcss'),
         },
       },
