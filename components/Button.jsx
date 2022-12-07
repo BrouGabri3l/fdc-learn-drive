@@ -2,39 +2,32 @@ import Image from "next/image"
 
 function Button(props) {
     const {
-        className,
         children,
         icon,
+        className,
         theme,
-        ...restProps
     } = props
-    const classname = () => {
-        if (theme == "primary") 
-            return "btn-primary"
-        if (theme == "secondary")
-            return "btn-secondary"
-        if (theme == "outline")
-            return "btn-outline"
-    }
+    const variant = `btn-${theme}`
+        
     return (
         <button
-            {...restProps}
-            className={`btn ${classname()}`}
+            className={`btn ${variant} ${className}`}
         >
-            <span className="p-3 pl-0"> 
+            <span className="py-3 flex-grow text-center">
                 {children}
             </span>
-            <ButtonIcon className={theme=="primary" && "btn-icon-bg" } icon={icon} />
+            {icon &&
+                <ButtonIcon className={theme=="primary" && "btn-icon-bg"} Icon={icon}/>
+            }
         </button>
     )
 }
 
-
 function ButtonIcon(props) {
-    const { icon, className } = props
+    const { Icon, className } = props
     return (
         <span className={`flex items-center justify-center p-3 ${className}`}>
-            <Image src={icon} width={20} height={20}></Image>
+            <Icon></Icon>
         </span>
     )
 }

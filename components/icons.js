@@ -1,6 +1,7 @@
 import PlusIcon from '/public/plus.svg'
 import FrameIcon from '/public/Frame.svg'
 import DownloadIcon from '/public/Download.svg'
+import CloseIcon from '/public/Close.svg'
 export {
-    FrameIcon,PlusIcon,DownloadIcon
+    FrameIcon,PlusIcon,DownloadIcon,CloseIcon
 }
