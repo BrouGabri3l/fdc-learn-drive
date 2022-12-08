@@ -2,8 +2,9 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import Button from '../components/Button'
-import {FrameIcon} from '../components/icons'
+import {AcademyIcon, FrameIcon} from '../components/icons'
 import Header from '../components/Header'
+import { Card } from '../components/Card'
 export default function Home() {
   return (
     <div className={styles.container}>
@@ -13,6 +14,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
+      <Card Icon={AcademyIcon}>
+      <strong>Learn</strong>: mais de <strong>220 módulos</strong>, distribuídos em 7 dimensões empresariais
+      </Card>
     </div>
   )
 }
