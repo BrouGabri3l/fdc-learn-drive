@@ -1,13 +1,19 @@
+import { PropsWithChildren } from "react"
 
-function Button(props) {
+interface ButtonProps {
+    Icon?: any,
+    className?: String,
+    theme: 'primary' | 'secondary' | "outline"
+}
+function Button(props: PropsWithChildren<ButtonProps>) {
     const {
         children,
-        icon,
+        Icon,
         className,
         theme,
     } = props
     const variant = `btn-${theme}`
-        
+
     return (
         <button
             className={`btn ${variant} ${className}`}
@@ -15,19 +21,12 @@ function Button(props) {
             <span className="py-3 flex-grow text-center">
                 {children}
             </span>
-            {icon &&
-                <ButtonIcon className={theme=="primary" && "btn-icon-bg"} Icon={icon}/>
+            {Icon &&
+                <span className={`flex items-center justify-center p-3 ${theme == "primary" && "btn-icon-bg"}`}>
+                    <Icon />
+                </span>
             }
         </button>
-    )
-}
-
-function ButtonIcon(props) {
-    const { Icon, className } = props
-    return (
-        <span className={`flex items-center justify-center p-3 ${className}`}>
-            <Icon></Icon>
-        </span>
     )
 }
 

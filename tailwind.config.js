@@ -35,7 +35,8 @@ module.exports = {
         "success": "#4ABA55"
       },
       fontFamily: {
-        openSans: ['var(--font-openSans)']
+        openSans: ['var(--font-openSans)'],
+        nexaSlab: ['Nexa Slab'],
       }
     },
   },
