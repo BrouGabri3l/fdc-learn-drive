@@ -1,8 +1,8 @@
 .btn {
   @apply font-bold font-openSans text-secondary-white text-base text-right uppercase  flex items-stretch;
 }
-.btn-primary{
-  @apply pl-6 gap-3;
+.btn-primary {
+  @apply pl-8 gap-8;
 }
 .btn-primary,
 .btn-secondary {
@@ -11,7 +11,8 @@
 .btn-primary:disabled {
   @apply bg-secondary-gray-medium;
 }
-.btn-secondary,.btn-outline {
+.btn-secondary,
+.btn-outline {
   @apply flex-row-reverse  px-6;
 }
 .btn-icon-bg {

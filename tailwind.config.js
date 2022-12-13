@@ -36,7 +36,7 @@ module.exports = {
       },
       fontFamily: {
         openSans: ['var(--font-openSans)'],
-        nexaSlab: ['Nexa Slab'],
+        nexaSlab: ["Nexa Slab"],
       }
     },
   },
