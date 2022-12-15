@@ -41,6 +41,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
+import Canvas from "../components/Canvas";
 
 export default function Home() {
   const list = [
@@ -131,8 +132,8 @@ export default function Home() {
       <div>
         <Header />
         <article className="bg-primary-black-blue text-white">
-          <div className="center flex py-16 gap-24 justify-around text-3xl">
-            <div className="max-w-2xl">
+          <div className="center flex max-lg:flex-col py-16 gap-24 justify-around text-3xl">
+            <div className="">
               <h1 className="font-black font-nexaSlab uppercase">Corporate Learn & Drive: Sua academia de gestão</h1>
               <h2 className="font-nexaSlab font-light">Para empresas que querem transformar gaps em oportunidades</h2>
               <section className="text-lg pt-6">
@@ -146,10 +147,11 @@ export default function Home() {
                 <Button theme="secondary">Quero começar agora</Button>
               </div>
             </div>
-            <div className="">
+            <div className="shrink-0 max-w-xl">
               <img src={KV.src} alt="" />
             </div>
           </div>
+          {/* <Canvas></Canvas> */}
         </article>
         {/* Seção dos cards */}
         <article className="pt-14 relative overflow-x-clip ">
@@ -214,19 +216,37 @@ export default function Home() {
                 Sobre a fdc
               </h2>
             </section>
-            <section className="mx-auto max-w-lg">
-              <p className="py-12">
-                A FDC impulsiona o desenvolvimento das organizações com uma
-                abordagem focada em resultados, inclusão e sustentabilidade para
-                os negócios. Olhamos para a real necessidade, bem como para os
-                desafios e objetivos das organizações e de seus profissionais,
-                contribuindo para o aprimoramento das competências gerenciais e
-                individuais e a melhoria constante da governança, gestão e dos
-                resultados.
-              </p>
-              <span>
-                *Segundo o ranking de Educação Executiva 2022 do Financial Times.
-              </span>
+            <section className=" ">
+              <div className="max-w-lg mx-auto">
+                <p className="py-12">
+                  A FDC impulsiona o desenvolvimento das organizações com uma
+                  abordagem focada em resultados, inclusão e sustentabilidade para
+                  os negócios. Olhamos para a real necessidade, bem como para os
+                  desafios e objetivos das organizações e de seus profissionais,
+                  contribuindo para o aprimoramento das competências gerenciais e
+                  individuais e a melhoria constante da governança, gestão e dos
+                  resultados.
+                </p>
+              </div>
+              <section className="flex flex-col gap-y-8 max-w-3xl mx-auto">
+                <div className="flex gap-x-6 ">
+                  <p className="flex-grow "><strong className="text-2xl px-4 py-2 bg-terciary-orange block font-nexaSlab">+1 Milhão</strong><br />de executivos capacitados em programas</p>
+                  <p className="flex-grow"><strong className="text-2xl px-4 py-2 bg-terciary-orange block font-nexaSlab">+700 </strong><br />docentes em notoriedade nacional e internacional</p>
+                  <p className="flex-grow"><strong className="text-2xl px-4 py-2 bg-terciary-orange block font-nexaSlab">+900</strong><br />Empresas cliente atendidas por ano</p>
+                  <p className="flex-grow"><strong className="text-2xl px-4 py-2 bg-terciary-orange block font-nexaSlab">45 Anos</strong><br />de história de sucesso e liderança</p>
+                </div>
+                <div className="flex gap-x-6">
+                  <p className="flex-grow"><strong className="text-2xl px-4 py-2 bg-terciary-orange block font-nexaSlab">+1 Milhão</strong><br />de executivos capacitados em programas</p>
+                  <p className="flex-grow"><strong className="text-2xl px-4 py-2 bg-terciary-orange block font-nexaSlab">+700 </strong><br />docentes em notoriedade nacional e internacional</p>
+                  <p className="flex-grow"><strong className="text-2xl px-4 py-2 bg-terciary-orange block font-nexaSlab">+900</strong><br />Empresas cliente atendidas por ano</p>
+
+                </div>
+              </section>
+              <div className="mx-auto max-w-lg pt-9">
+                <span>
+                  *Segundo o ranking de Educação Executiva 2022 do Financial Times.
+                </span>
+              </div>
               <Button
                 theme="outline"
                 className="text-white outline-white mx-auto mt-10 my-12"
@@ -334,14 +354,14 @@ export default function Home() {
           </div>
         </section>
       </article>
-      <footer className="bg-white">
-        <article className="flex justify-around py-16 items-center">
+      {/* <footer className="bg-white">
+        <article className="flex  justify-around py-16 items-stretch  divide-x-2 divide-red-500">
           <section className="flex flex-col text-primary-gray-dark gap-4">
             <h4 className="font-black font-nexaSlab">Fale Conosco</h4>
             <a href="tel:0800 941 9200">0800 941 9200</a>
             <a href="mailto:atendimento@fdc.org.br">atendimento@fdc.org.br</a>
           </section>
-          <div className="flex gap-4 py-8">
+          <div className="flex gap-4  justify-around py-8">
             <img src={Message.src} alt="" />
             <img src={Linkedin.src} alt="" />
             <img src={Instagram.src} alt="" />
@@ -359,7 +379,7 @@ export default function Home() {
             </div>
           </div>
         </article>
-      </footer>
+      </footer> */}
     </div>
   );
 }
