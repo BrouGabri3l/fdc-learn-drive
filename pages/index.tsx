@@ -21,27 +21,22 @@ import FDC from "/public/FDC.svg";
 import RightImage from "/public/RightImage.png";
 import CenterImage from "/public/CenterImage.png";
 import LeftImage from "/public/LeftImage.png";
-import EquisAccredited from '/public/EquisAccredited.png'
-import FTImage from '/public/FT.png'
-import MBA from '/public/MBA.png'
-import KV from '/public/KV.png'
-import Rectangle1 from '/public/Rectangle21.png'
-import Rectangle2 from '/public/Rectangle22.png'
-import Rectangle3 from '/public/Rectangle23.png'
-import Message from '/public/Message.png'
-import Linkedin from '/public/Linkedin.png'
-import Instagram from '/public/Instagram.png'
-import Youtube from '/public/Youtube.png'
-import Facebook from '/public/Facebook.png'
-import Twitter from '/public/Twitter.png'
-import Spotify from '/public/Spotify.png'
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
+import EquisAccredited from "/public/EquisAccredited.png";
+import FTImage from "/public/FT.png";
+import MBA from "/public/MBA.png";
+import KV from "/public/KV.png";
+import Rectangle1 from "/public/Rectangle21.png";
+import Rectangle2 from "/public/Rectangle22.png";
+import Rectangle3 from "/public/Rectangle23.png";
+
+import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
 import Canvas from "../components/Canvas";
+import Footer from "../components/Footer";
 
 export default function Home() {
   const list = [
@@ -120,8 +115,8 @@ export default function Home() {
     ),
   };
   // const swiper = useSwiper();
-  const navPrevButton = useRef<HTMLButtonElement>(null)
-  const navNextButton = useRef<HTMLButtonElement>(null)
+  const navPrevButton = useRef<HTMLButtonElement>(null);
+  const navNextButton = useRef<HTMLButtonElement>(null);
   return (
     <div>
       <Head>
@@ -134,10 +129,23 @@ export default function Home() {
         <article className="bg-primary-black-blue text-white">
           <div className="center flex max-lg:flex-col py-16 gap-24 justify-around text-3xl">
             <div className="">
-              <h1 className="font-black font-nexaSlab uppercase">Corporate Learn & Drive: Sua academia de gestão</h1>
-              <h2 className="font-nexaSlab font-light">Para empresas que querem transformar gaps em oportunidades</h2>
+              <h1 className="font-black font-nexaSlab uppercase">
+                Corporate Learn & Drive: Sua academia de gestão
+              </h1>
+              <h2 className="font-nexaSlab font-light">
+                Para empresas que querem transformar gaps em oportunidades
+              </h2>
               <section className="text-lg pt-6">
-                <p>Descubra os gaps do seu negócio com o apoio da FDC e crie trilhas de desenvolvimento específicas para a sua empresa. Com o programa Corporate Learn & Drive, seu time inicia a jornada para o futuro com a melhor escola de negócios da América Latina, cobrindo as principais dimensões necessárias para a evolução dos negócios - é uma verdadeira academia de gestão à sua disposição. A excelência educacional de sempre, em um formato que você nunca viu.</p>
+                <p>
+                  Descubra os gaps do seu negócio com o apoio da FDC e crie
+                  trilhas de desenvolvimento específicas para a sua empresa. Com
+                  o programa Corporate Learn & Drive, seu time inicia a jornada
+                  para o futuro com a melhor escola de negócios da América
+                  Latina, cobrindo as principais dimensões necessárias para a
+                  evolução dos negócios - é uma verdadeira academia de gestão à
+                  sua disposição. A excelência educacional de sempre, em um
+                  formato que você nunca viu.
+                </p>
               </section>
               <div className="relative text-2xl mx-6 my-14">
                 <p className="before:content-[''] before:absolute before:w-1 before:h-full  before:-left-6 pb-6  before:bg-terciary-orange">
@@ -220,31 +228,66 @@ export default function Home() {
               <div className="max-w-lg mx-auto">
                 <p className="py-12">
                   A FDC impulsiona o desenvolvimento das organizações com uma
-                  abordagem focada em resultados, inclusão e sustentabilidade para
-                  os negócios. Olhamos para a real necessidade, bem como para os
-                  desafios e objetivos das organizações e de seus profissionais,
-                  contribuindo para o aprimoramento das competências gerenciais e
-                  individuais e a melhoria constante da governança, gestão e dos
-                  resultados.
+                  abordagem focada em resultados, inclusão e sustentabilidade
+                  para os negócios. Olhamos para a real necessidade, bem como
+                  para os desafios e objetivos das organizações e de seus
+                  profissionais, contribuindo para o aprimoramento das
+                  competências gerenciais e individuais e a melhoria constante
+                  da governança, gestão e dos resultados.
                 </p>
               </div>
               <section className="flex flex-col gap-y-8 max-w-3xl mx-auto">
                 <div className="flex gap-x-6 ">
-                  <p className="flex-grow "><strong className="text-2xl px-4 py-2 bg-terciary-orange block font-nexaSlab">+1 Milhão</strong><br />de executivos capacitados em programas</p>
-                  <p className="flex-grow"><strong className="text-2xl px-4 py-2 bg-terciary-orange block font-nexaSlab">+700 </strong><br />docentes em notoriedade nacional e internacional</p>
-                  <p className="flex-grow"><strong className="text-2xl px-4 py-2 bg-terciary-orange block font-nexaSlab">+900</strong><br />Empresas cliente atendidas por ano</p>
-                  <p className="flex-grow"><strong className="text-2xl px-4 py-2 bg-terciary-orange block font-nexaSlab">45 Anos</strong><br />de história de sucesso e liderança</p>
+                  <p className="flex-grow ">
+                    <strong className="text-2xl px-4 py-2 bg-terciary-orange block font-nexaSlab">
+                      +1 Milhão
+                    </strong>
+                    de executivos capacitados em programas
+                  </p>
+                  <p className="flex-grow">
+                    <strong className="text-2xl px-4 py-2 bg-terciary-orange block font-nexaSlab">
+                      +700{" "}
+                    </strong>
+                    docentes em notoriedade nacional e internacional
+                  </p>
+                  <p className="flex-grow">
+                    <strong className="text-2xl px-4 py-2 bg-terciary-orange block font-nexaSlab">
+                      +900
+                    </strong>
+                    Empresas cliente atendidas por ano
+                  </p>
+                  <p className="flex-grow">
+                    <strong className="text-2xl px-4 py-2 bg-terciary-orange block font-nexaSlab">
+                      45 Anos
+                    </strong>
+                    de história de sucesso e liderança
+                  </p>
                 </div>
                 <div className="flex gap-x-6">
-                  <p className="flex-grow"><strong className="text-2xl px-4 py-2 bg-terciary-orange block font-nexaSlab">+1 Milhão</strong><br />de executivos capacitados em programas</p>
-                  <p className="flex-grow"><strong className="text-2xl px-4 py-2 bg-terciary-orange block font-nexaSlab">+700 </strong><br />docentes em notoriedade nacional e internacional</p>
-                  <p className="flex-grow"><strong className="text-2xl px-4 py-2 bg-terciary-orange block font-nexaSlab">+900</strong><br />Empresas cliente atendidas por ano</p>
-
+                  <p className="flex-grow">
+                    <strong className="text-2xl px-4 py-2 bg-terciary-orange block font-nexaSlab">
+                      +1 Milhão
+                    </strong>
+                    de executivos capacitados em programas
+                  </p>
+                  <p className="flex-grow">
+                    <strong className="text-2xl px-4 py-2 bg-terciary-orange block font-nexaSlab">
+                      +700{" "}
+                    </strong>
+                    docentes em notoriedade nacional e internacional
+                  </p>
+                  <p className="flex-grow">
+                    <strong className="text-2xl px-4 py-2 bg-terciary-orange block font-nexaSlab">
+                      +900
+                    </strong>
+                    Empresas cliente atendidas por ano
+                  </p>
                 </div>
               </section>
               <div className="mx-auto max-w-lg pt-9">
                 <span>
-                  *Segundo o ranking de Educação Executiva 2022 do Financial Times.
+                  *Segundo o ranking de Educação Executiva 2022 do Financial
+                  Times.
                 </span>
               </div>
               <Button
@@ -256,7 +299,9 @@ export default function Home() {
             </section>
             <section className="flex gap-16 items-stretch mx-auto max-w-3xl  px-12 py-14 mb-20  bg-secondary-gray-medium text-primary-gray-dark">
               <div className="flex flex-1 items-end">
-                <h3 className="before:content-['']  before:absolute before:w-1/2 before:h-2 before:-top-4 before:bg-terciary-orange relative font-nexaSlab  font">Ranking e Certificações</h3>
+                <h3 className="before:content-['']  before:absolute before:w-1/2 before:h-2 before:-top-4 before:bg-terciary-orange relative font-nexaSlab  font">
+                  Ranking e Certificações
+                </h3>
               </div>
               <div className="flex gap-6 items-center justify-around">
                 <img src={FTImage.src} alt="" className="h-14" />
@@ -282,9 +327,12 @@ export default function Home() {
               </h2>
             </section>
             <section className="mx-auto max-w-lg py-12 text-primary-gray-dark">
-              <p>Confira os depoimentos de executivos e colaboradores que já participaram de programas empresariais da FDC</p>
+              <p>
+                Confira os depoimentos de executivos e colaboradores que já
+                participaram de programas empresariais da FDC
+              </p>
             </section>
-            <section className="center px-8 relative" >
+            <section className="center px-8 relative">
               <Swiper
                 modules={[Navigation, Scrollbar, A11y]}
                 spaceBetween={16}
@@ -294,20 +342,42 @@ export default function Home() {
                   nextEl: navNextButton.current,
                 }}
                 onBeforeInit={(swiper) => {
-                  swiper.params.navigation.prevEl = navPrevButton.current,
-                    swiper.params.navigation.nextEl = navNextButton.current
+                  (swiper.params.navigation.prevEl = navPrevButton.current),
+                    (swiper.params.navigation.nextEl = navNextButton.current);
                 }}
               >
-                <SwiperSlide className="max-w-sm"><TestimonialCard data={testimonial}></TestimonialCard></SwiperSlide>
-                <SwiperSlide className="max-w-sm"><TestimonialCard data={testimonial}></TestimonialCard></SwiperSlide>
-                <SwiperSlide className="max-w-sm"><TestimonialCard data={testimonial}></TestimonialCard></SwiperSlide>
-                <SwiperSlide className="max-w-sm"><TestimonialCard data={testimonial}></TestimonialCard></SwiperSlide>
-                <SwiperSlide className="max-w-sm"><TestimonialCard data={testimonial}></TestimonialCard></SwiperSlide>
-                <SwiperSlide className="max-w-sm"><TestimonialCard data={testimonial}></TestimonialCard></SwiperSlide>
+                <SwiperSlide className="max-w-sm">
+                  <TestimonialCard data={testimonial}></TestimonialCard>
+                </SwiperSlide>
+                <SwiperSlide className="max-w-sm">
+                  <TestimonialCard data={testimonial}></TestimonialCard>
+                </SwiperSlide>
+                <SwiperSlide className="max-w-sm">
+                  <TestimonialCard data={testimonial}></TestimonialCard>
+                </SwiperSlide>
+                <SwiperSlide className="max-w-sm">
+                  <TestimonialCard data={testimonial}></TestimonialCard>
+                </SwiperSlide>
+                <SwiperSlide className="max-w-sm">
+                  <TestimonialCard data={testimonial}></TestimonialCard>
+                </SwiperSlide>
+                <SwiperSlide className="max-w-sm">
+                  <TestimonialCard data={testimonial}></TestimonialCard>
+                </SwiperSlide>
               </Swiper>
               <div className="text-primary-blue">
-                <button className="absolute top-1/2 -translate-y-1/2 left-0 -translate-x-1/2 rotate-90" ref={navPrevButton} ><DownArrow className="h-8" /></button>
-                <button ref={navNextButton} className="absolute top-1/2 -translate-y-1/2 right-0 translate-x-1/2 -rotate-90"><DownArrow className="h-8" /></button>
+                <button
+                  className="absolute top-1/2 -translate-y-1/2 left-0 -translate-x-1/2 rotate-90"
+                  ref={navPrevButton}
+                >
+                  <DownArrow className="h-8" />
+                </button>
+                <button
+                  ref={navNextButton}
+                  className="absolute top-1/2 -translate-y-1/2 right-0 translate-x-1/2 -rotate-90"
+                >
+                  <DownArrow className="h-8" />
+                </button>
               </div>
             </section>
           </div>
@@ -354,32 +424,7 @@ export default function Home() {
           </div>
         </section>
       </article>
-      {/* <footer className="bg-white">
-        <article className="flex  justify-around py-16 items-stretch  divide-x-2 divide-red-500">
-          <section className="flex flex-col text-primary-gray-dark gap-4">
-            <h4 className="font-black font-nexaSlab">Fale Conosco</h4>
-            <a href="tel:0800 941 9200">0800 941 9200</a>
-            <a href="mailto:atendimento@fdc.org.br">atendimento@fdc.org.br</a>
-          </section>
-          <div className="flex gap-4  justify-around py-8">
-            <img src={Message.src} alt="" />
-            <img src={Linkedin.src} alt="" />
-            <img src={Instagram.src} alt="" />
-            <img src={Youtube.src} alt="" />
-            <img src={Facebook.src} alt="" />
-            <img src={Twitter.src} alt="" />
-            <img src={Spotify.src} alt="" />
-          </div>
-          <div className="flex gap-6 items-center">
-            <h3 className="font-nexaSlab text-primary-gray-dark font-black max-w-min">Ranking e Certificações</h3>
-            <div className="flex gap-6 items-center justify-around">
-              <img src={FTImage.src} alt="" className="h-14" />
-              <img src={MBA.src} alt="" className="h-10" />
-              <img src={EquisAccredited.src} alt="" className="h-16" />
-            </div>
-          </div>
-        </article>
-      </footer> */}
+      <Footer/>
     </div>
   );
 }
