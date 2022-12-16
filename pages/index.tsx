@@ -29,12 +29,13 @@ import Rectangle1 from "/public/Rectangle21.png";
 import Rectangle2 from "/public/Rectangle22.png";
 import Rectangle3 from "/public/Rectangle23.png";
 
-import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
+import { Navigation, Pagination, Scrollbar, A11y, Grid } from "swiper";
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
+import "swiper/css/grid";
 import Canvas from "../components/Canvas";
 import Footer from "../components/Footer";
 
@@ -175,27 +176,45 @@ export default function Home() {
               </p>
             </article>
             {/* //card list */}
-            <ul className="flex max-md:flex-col max-w-5xl flex-wrap justify-center gap-6 mx-auto pt-12 ">
-              <li className="basis-1/3 flex">
-                <section className="flex flex-col gap-2 justify-center text-primary-gray-dark">
-                  <p>
-                    Avaliamos as <strong>lacunas do seu negócio</strong> para
-                    sugerir os conteúdos que precisam ser trabalhados e isso faz
-                    toda a diferença.
-                  </p>
-                  <p>
-                    Seu time ainda pode adicionar módulos de interesse de acordo
-                    com a cultura e as necessidades pontuais da organização,
-                    formando uma <strong> grade curricular flexível.</strong>
-                  </p>
-                </section>
-              </li>
-              {/* //cards */}
-              {list.map((item, index) => (
-                <li className="basis-1/3" key={index}>
-                  <Card Icon={item.icon}>{item.text}</Card>
-                </li>
-              ))}
+            <ul className="max-w-5xl mx-auto pt-12">
+              <Swiper
+                modules={[Navigation, Pagination, Scrollbar, A11y, Grid]}
+                slidesPerView={1.1}
+                spaceBetween={24}
+                breakpoints={{
+                  768:{
+                    grid:{fill:'row',rows:3},
+                    autoHeight:false,
+                    slidesPerView:2,
+                  },
+            
+                }}
+              >
+                <SwiperSlide>
+                  <li className="basis-1/3 flex">
+                    <section className="flex flex-col gap-2 justify-center text-primary-gray-dark">
+                      <p>
+                        Avaliamos as <strong>lacunas do seu negócio</strong> para
+                        sugerir os conteúdos que precisam ser trabalhados e isso faz
+                        toda a diferença.
+                      </p>
+                      <p>
+                        Seu time ainda pode adicionar módulos de interesse de acordo
+                        com a cultura e as necessidades pontuais da organização,
+                        formando uma <strong> grade curricular flexível.</strong>
+                      </p>
+                    </section>
+                  </li>
+                </SwiperSlide>
+                {/* //cards */}
+                {list.map((item, index) => (
+                  <SwiperSlide>
+                    <li className="basis-1/3" key={index}>
+                      <Card Icon={item.icon}>{item.text}</Card>
+                    </li>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
             </ul>
           </div>
           <div className="relative z-10">
@@ -236,8 +255,8 @@ export default function Home() {
                   da governança, gestão e dos resultados.
                 </p>
               </div>
-              <section className="flex flex-col gap-y-8 max-w-3xl mx-auto">
-                <div className="flex gap-x-6 ">
+              <section className="flex flex-col gap-y-8 max-w-3xl mx-auto ">
+                <div className="flex gap-6 max-lg:flex-col ">
                   <p className="flex-grow ">
                     <strong className="text-2xl px-4 py-2 bg-terciary-orange block font-nexaSlab">
                       +1 Milhão
@@ -263,7 +282,7 @@ export default function Home() {
                     de história de sucesso e liderança
                   </p>
                 </div>
-                <div className="flex gap-x-6">
+                <div className="flex gap-6 max-lg:flex-col">
                   <p className="flex-grow">
                     <strong className="text-2xl px-4 py-2 bg-terciary-orange block font-nexaSlab">
                       +1 Milhão
@@ -297,13 +316,13 @@ export default function Home() {
                 Conheça Mais
               </Button>
             </section>
-            <section className="flex gap-16 items-stretch mx-auto max-w-3xl  px-12 py-14 mb-20  bg-secondary-gray-medium text-primary-gray-dark">
+            <section className="flex gap-16 items-stretch max-lg:flex-col mx-auto max-w-3xl  px-12 py-14 mb-20  bg-secondary-gray-medium text-primary-gray-dark">
               <div className="flex flex-1 items-end">
                 <h3 className="before:content-['']  before:absolute before:w-1/2 before:h-2 before:-top-4 before:bg-terciary-orange relative font-nexaSlab  font">
                   Ranking e Certificações
                 </h3>
               </div>
-              <div className="flex gap-6 items-center justify-around">
+              <div className="flex gap-6 items-center max-lg:flex-col justify-around">
                 <img src={FTImage.src} alt="" className="h-14" />
                 <img src={MBA.src} alt="" className="h-10" />
                 <img src={EquisAccredited.src} alt="" className="h-16" />
@@ -334,34 +353,45 @@ export default function Home() {
             </section>
             <section className="center px-8 relative">
               <Swiper
-                modules={[Navigation, Scrollbar, A11y]}
+                modules={[Navigation, Pagination, Scrollbar, A11y]}
                 spaceBetween={16}
-                slidesPerView={3}
+                slidesPerView={1}
+                breakpoints={{
+                  1024: {
+                    width: 1024,
+                    slidesPerView: 3
+                  },
+                  768: {
+                    width: 768,
+                    slidesPerView: 2
+                  }
+                }}
                 navigation={{
                   prevEl: navPrevButton.current,
                   nextEl: navNextButton.current,
                 }}
+
                 onBeforeInit={(swiper) => {
                   (swiper.params.navigation.prevEl = navPrevButton.current),
                     (swiper.params.navigation.nextEl = navNextButton.current);
                 }}
               >
-                <SwiperSlide className="max-w-sm">
+                <SwiperSlide >
                   <TestimonialCard data={testimonial}></TestimonialCard>
                 </SwiperSlide>
-                <SwiperSlide className="max-w-sm">
+                <SwiperSlide>
                   <TestimonialCard data={testimonial}></TestimonialCard>
                 </SwiperSlide>
-                <SwiperSlide className="max-w-sm">
+                <SwiperSlide>
                   <TestimonialCard data={testimonial}></TestimonialCard>
                 </SwiperSlide>
-                <SwiperSlide className="max-w-sm">
+                <SwiperSlide>
                   <TestimonialCard data={testimonial}></TestimonialCard>
                 </SwiperSlide>
-                <SwiperSlide className="max-w-sm">
+                <SwiperSlide>
                   <TestimonialCard data={testimonial}></TestimonialCard>
                 </SwiperSlide>
-                <SwiperSlide className="max-w-sm">
+                <SwiperSlide>
                   <TestimonialCard data={testimonial}></TestimonialCard>
                 </SwiperSlide>
               </Swiper>
@@ -385,12 +415,12 @@ export default function Home() {
             <FDC className="h-[634px] text-secondary-gray-medium z-1" />
           </div>
         </article>
-        <article className="flex center justify-around center py-32">
-          <section className="pt-12 pb-10 border-y-8 text-center font-nexaSlab flex-1 max-w-xs border-white self-start  ">
-            <h2 className="pb-2 text-4xl text-primary-blue uppercase">FAQ</h2>
+        <article className="flex center justify-between center py-32 max-lg:flex-col gap-8 max-lg:items-center">
+          <section className="pt-12 pb-10 border-y-8 text-center font-nexaSlab flex-1 w-1/2 lg:max-w-xs mx-auto border-white self-start  ">
+            <h2 className="pb-2 text-4xl text-primary-blue uppercase">FAQ</h2>ç
           </section>
-          <div>
-            <ol className="list-decimal flex flex-col  marker:text-terciary-orange marker:font-bold divide-y divide-terciary-gray-blue divide-solid">
+          <div className="px-8">
+            <ol className="list-decimal flex flex-col marker:text-terciary-orange marker:font-bold divide-y divide-terciary-gray-blue divide-solid">
               <li className="pt-6">
                 <FaqCard title={faq.title}>{faq.children}</FaqCard>
               </li>
@@ -424,7 +454,7 @@ export default function Home() {
           </div>
         </section>
       </article>
-      <Footer/>
+      <Footer />
     </div>
   );
 }

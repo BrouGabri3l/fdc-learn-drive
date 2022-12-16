@@ -12,32 +12,32 @@ import MBA from "/public/MBA.png";
 const Footer = () => {
   return (
     <footer className="bg-white">
-      <article className="flex justify-around py-16 items-stretch  divide-x-2 divide-red-500">
-        <section className="flex flex-col text-primary-gray-dark gap-4">
+      <article className="flex justify-around py-16 items-stretch max-lg:flex-col max-lg:items-center max-lg:text-center max-lg:divide-y lg:divide-x divide-secondary-gray-medium">
+        <section className="flex flex-col p-8 text-primary-gray-dark gap-4">
           <h4 className="font-black font-nexaSlab">Fale Conosco</h4>
           <a href="tel:0800 941 9200">0800 941 9200</a>
           <a href="mailto:atendimento@fdc.org.br">atendimento@fdc.org.br</a>
         </section>
-        <div className="py-8 flex justify-center">
-          <div className="flex h-8 gap-4">
-            <img src={Message.src} alt="" />
-            <img src={Linkedin.src} alt="" />
-            <img src={Instagram.src} alt="" />
-            <img src={Youtube.src} alt="" />
-            <img src={Facebook.src} alt="" />
-            <img src={Twitter.src} alt="" />
-            <img src={Spotify.src} alt="" />
-          </div>
+        <div className="flex items-center justify-end">
+          <ul className="p-8 flex items-center gap-4">
+            <li> <img src={Message.src} alt="" /></li>
+            <li> <img src={Linkedin.src} alt="" /></li>
+            <li> <img src={Instagram.src} alt="" /></li>
+            <li> <img src={Youtube.src} alt="" /></li>
+            <li> <img src={Facebook.src} alt="" /></li>
+            <li> <img src={Twitter.src} alt="" /></li>
+            <li> <img src={Spotify.src} alt="" /></li>
+          </ul>
         </div>
-        <div className="flex gap-6 items-center">
+        <div className="flex p-8 gap-6 items-center max-lg:flex-col">
           <h3 className="font-nexaSlab text-primary-gray-dark font-black max-w-min">
             Ranking e Certificações
           </h3>
-          <div className="flex gap-6 items-center justify-around">
-            <img src={FTImage.src} alt="" className="h-14" />
-            <img src={MBA.src} alt="" className="h-10" />
-            <img src={EquisAccredited.src} alt="" className="h-16" />
-          </div>
+          <ul className="flex gap-6 items-center max-lg:flex-col justify-around">
+            <li><img src={FTImage.src} alt=""  /></li>
+            <li><img src={MBA.src} alt="" /></li>
+            <li><img src={EquisAccredited.src} alt=""  /></li>
+          </ul>
         </div>
       </article>
     </footer>
