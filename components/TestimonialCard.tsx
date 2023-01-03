@@ -9,9 +9,8 @@ export interface TestimonialCardProps {
 function TestimonialCard(props: TestimonialCardProps) {
     const { data } = props
     return (
-        <article className="p-8 border-2 border-secondary-gray-medium before:block bg-white before:border-2 before:border-terciary-orange before:w-full ">
+        <article className="card-testimonial">
             <section className="py-8 text-center relative">
-
                 <p className='relative'>
                     <QuoteIcon className="w-10 absolute -top-3 left-3 -z-10 text-secondary-gray-medium" />
                     {data.text}</p>

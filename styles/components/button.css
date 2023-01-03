@@ -21,3 +21,6 @@
 .btn-outline {
   @apply flex-row-reverse outline outline-1 outline-primary-black-blue text-primary-black-blue;
 }
+.btn-faq{
+  @apply flex flex-1 items-center justify-between gap-4 font-bold
+}

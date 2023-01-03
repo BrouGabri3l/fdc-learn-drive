@@ -6,7 +6,7 @@ interface CardProps {
 function Card(props: PropsWithChildren<CardProps>) {
   const { Icon, children } = props;
   return (
-    <article className="text-center items-center p-8 h-full flex flex-col gap-4 border-solid border-secondary-gray-medium border bg-white">
+    <article className="card">
       <span>{Icon && <Icon className="text-terciary-orange w-16 h-16" />}</span>
       <p className="px-8 text-primary-gray-dark">{children}</p>
     </article>

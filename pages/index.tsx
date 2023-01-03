@@ -33,11 +33,11 @@ import { Navigation, Pagination, Scrollbar, A11y, Grid } from "swiper";
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
-import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import "swiper/css/grid";
 import Canvas from "../components/Canvas";
 import Footer from "../components/Footer";
+import InfoCard from "../components/InfoCard";
 
 export default function Home() {
   const list = [
@@ -128,7 +128,7 @@ export default function Home() {
       <div>
         <Header />
         <article className="bg-primary-black-blue text-white max-md:px-8">
-          <div className="center flex max-lg:flex-col py-16 gap-24 justify-around text-3xl">
+          <div className="center flex max-lg:flex-col py-16 gap-24 justify-around text-3xl items-center">
             <div className="">
               <h1 className="font-black font-nexaSlab uppercase">
                 Corporate Learn & Drive: Sua academia de gestão
@@ -166,32 +166,38 @@ export default function Home() {
         <article className="pt-14 relative overflow-x-clip max-md:px-8">
           <div className="center relative z-10 mb-48">
             {/* //Heading */}
-            <article className="pt-12 pb-10 border-y-8 text-center font-nexaSlab max-w-lg lg:max-w-3xl mx-auto border-white">
-              <h2 className="pb-2 text-4xl text-primary-blue uppercase">
+            <section className="heading border-white">
+              <h2 className="heading-text text-primary-blue">
                 Sua empresa é única
               </h2>
               <p className="text-primary-black-blue font-bold">
                 {" "}
                 É por isso que a jornada dela também tem de ser
               </p>
-            </article>
+            </section>
             {/* //card list */}
             <ul className="max-w-5xl mx-auto pt-12">
               <Swiper
                 modules={[Navigation, Pagination, Scrollbar, A11y, Grid]}
                 slidesPerView={1.1}
+                pagination={{
+                  type: 'bullets',
+                  bulletClass: 'swiper-custom-bullet',
+                  bulletActiveClass:'swiper-custom-bullet-active',
+                  el: ".padrao"
+                }}
                 spaceBetween={24}
                 autoHeight={false}
                 breakpoints={{
-                  768:{
-                    grid:{fill:'row',rows:3},
-                    slidesPerView:2,
+                  768: {
+                    grid: { fill: 'row', rows: 3 },
+                    slidesPerView: 2,
                   },
-            
+
                 }}
               >
                 <SwiperSlide>
-                  <li className="basis-1/3 flex">
+                  <li className="basis-1/3 flex ">
                     <section className="flex flex-col gap-2 justify-center text-primary-gray-dark">
                       <p>
                         Avaliamos as <strong>lacunas do seu negócio</strong> para
@@ -209,25 +215,27 @@ export default function Home() {
                 {/* //cards */}
                 {list.map((item, index) => (
                   <SwiperSlide>
-                    <li className="basis-1/3" key={index}>
+                    <li className="basis-1/3 h-full" key={index}>
                       <Card Icon={item.icon}>{item.text}</Card>
                     </li>
                   </SwiperSlide>
                 ))}
+                <div className="padrao">
+                </div>
               </Swiper>
             </ul>
           </div>
-          <div className="relative z-10">
+          <div className="relative z-10 max-sm:pt-48">
             <img
               src={LeftImage.src}
               alt=""
-              className="absolute right-1/2 -translate-x-1/3 opacity-90 -bottom-1/3"
+              className="absolute right-1/2 max-md:right-1/4 max-sm:left-1/4 max-sm:bottom-1/3 z-10  -translate-x-1/3 opacity-90 -bottom-1/3"
             />
-            <img src={CenterImage.src} alt="" className="mx-auto" />
+            <img src={CenterImage.src} alt="" className="mx-auto " />
             <img
               src={RightImage.src}
               alt=""
-              className="absolute left-1/2 translate-x-8 opacity-90 -top-24"
+              className="absolute left-1/2 translate-x-8 opacity-90 max-sm:top-1/4 max-sm:-left-5  -top-24"
             />
           </div>
           {/* //FDC background */}
@@ -236,10 +244,10 @@ export default function Home() {
           </div>
         </article>
         {/*  */}
-        <article className="bg-primary-gray-dark relative pt-44 overflow-x-hidden -z-1 text-white max-md:px-8">
-          <div className="relative z-10">
-            <section className="pt-12 pb-10 border-y-8 text-center font-nexaSlab max-w-lg lg:max-w-3xl mx-auto border-[#686366]">
-              <h2 className="pb-2 text-4xl text-primary-blue uppercase">
+        <article className="bg-primary-gray-dark relative pt-44 overflow-x-hidden -z-1 text-white ">
+          <div className="relative z-10 max-md:px-8">
+            <section className="heading border-[#686366]">
+              <h2 className="heading-text text-primary-blue uppercase">
                 Sobre a fdc
               </h2>
             </section>
@@ -256,51 +264,16 @@ export default function Home() {
                 </p>
               </div>
               <section className="flex flex-col gap-y-8 max-w-3xl mx-auto ">
-                <div className="flex gap-6 max-lg:flex-col ">
-                  <p className="flex-grow ">
-                    <strong className="text-2xl px-4 py-2 bg-terciary-orange block font-nexaSlab">
-                      +1 Milhão
-                    </strong>
-                    de executivos capacitados em programas
-                  </p>
-                  <p className="flex-grow">
-                    <strong className="text-2xl px-4 py-2 bg-terciary-orange block font-nexaSlab">
-                      +700{" "}
-                    </strong>
-                    docentes em notoriedade nacional e internacional
-                  </p>
-                  <p className="flex-grow">
-                    <strong className="text-2xl px-4 py-2 bg-terciary-orange block font-nexaSlab">
-                      +900
-                    </strong>
-                    Empresas cliente atendidas por ano
-                  </p>
-                  <p className="flex-grow">
-                    <strong className="text-2xl px-4 py-2 bg-terciary-orange block font-nexaSlab">
-                      45 Anos
-                    </strong>
-                    de história de sucesso e liderança
-                  </p>
+                <div className="flex gap-6 max-lg:flex-col-reverse max-lg:px-8">
+                  
+                  <InfoCard strongColor="bg-terciary-orange" className="flex-grow" strongText="1 Milhão">de executivos capacitados em programas</InfoCard>
+                  <InfoCard strongColor="bg-terciary-orange" className="flex-grow" strongText="1 Milhão">de executivos capacitados em programas</InfoCard>
+                  <InfoCard strongColor="bg-terciary-orange" className="flex-grow" strongText="1 Milhão">de executivos capacitados em programas</InfoCard>
                 </div>
-                <div className="flex gap-6 max-lg:flex-col">
-                  <p className="flex-grow">
-                    <strong className="text-2xl px-4 py-2 bg-terciary-orange block font-nexaSlab">
-                      +1 Milhão
-                    </strong>
-                    de executivos capacitados em programas
-                  </p>
-                  <p className="flex-grow">
-                    <strong className="text-2xl px-4 py-2 bg-terciary-orange block font-nexaSlab">
-                      +700{" "}
-                    </strong>
-                    docentes em notoriedade nacional e internacional
-                  </p>
-                  <p className="flex-grow">
-                    <strong className="text-2xl px-4 py-2 bg-terciary-orange block font-nexaSlab">
-                      +900
-                    </strong>
-                    Empresas cliente atendidas por ano
-                  </p>
+                <div className="flex gap-6 max-lg:flex-col max-lg:px-8">
+                  <InfoCard strongColor="bg-terciary-orange" className="flex-grow" strongText="+900">empresas cliente atendidas por ano</InfoCard>
+                  <InfoCard strongColor="bg-terciary-orange" className="flex-grow" strongText="+900">empresas cliente atendidas por ano</InfoCard>
+                  <InfoCard strongColor="bg-terciary-orange" className="flex-grow" strongText="+900">empresas cliente atendidas por ano</InfoCard>
                 </div>
               </section>
               <div className="mx-auto max-w-lg pt-9">
@@ -328,36 +301,40 @@ export default function Home() {
                 <img src={EquisAccredited.src} alt="" className="h-16" />
               </div>
             </section>
-              <Swiper
-                modules={[Navigation, Pagination, Scrollbar, A11y, Grid]}
-                spaceBetween={0}
-                breakpoints={{
-                  768: {
-                    spaceBetween:0,
-                    slidesPerView:3,
-                  },
-            
-                }}
-              >
-                <SwiperSlide>
-                  <img src={Rectangle1.src} alt="" />
-                </SwiperSlide>
-                <SwiperSlide>
-                  <img src={Rectangle2.src} alt="" />
-                </SwiperSlide>
-                <SwiperSlide>
-                  <img src={Rectangle3.src} alt="" />
-                </SwiperSlide>
-              </Swiper>
           </div>
+          <Swiper
+            modules={[Navigation, Pagination, Scrollbar, A11y, Grid]}
+            spaceBetween={0}
+            pagination
+            breakpoints={{
+              768: {
+                spaceBetween: 0,
+                slidesPerView: 3,
+              },
+
+            }}
+          >
+            <SwiperSlide>
+              <div className="flex-1">
+                <img src={Rectangle1.src} alt="" className="w-full" />
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <img src={Rectangle2.src} alt="" className="w-full" />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img src={Rectangle3.src} alt="" className="w-full" />
+            </SwiperSlide>
+          </Swiper>
+
           <div className="absolute bottom-1 left-1/2 -translate-x-1/2">
             <FDC className="h-[634px] text-[#686366] z-1" />
           </div>
         </article>
         <article className="py-28 bg-white relative overflow-hidden max-md:px-8">
           <div className="relative z-10">
-            <section className="pt-12 pb-10 border-y-8 text-center font-nexaSlab max-w-lg lg:max-w-3xl mx-auto border-secondary-gray-medium">
-              <h2 className="pb-2 text-4xl text-primary-blue uppercase">
+            <section className="heading border-secondary-gray-medium">
+              <h2 className="heading-text text-primary-blue">
                 Sua empresa em boa companhia
               </h2>
             </section>
@@ -372,6 +349,7 @@ export default function Home() {
                 modules={[Navigation, Pagination, Scrollbar, A11y]}
                 spaceBetween={16}
                 slidesPerView={1}
+                pagination
                 breakpoints={{
                   1024: {
                     width: 1024,
@@ -379,7 +357,7 @@ export default function Home() {
                   },
                   768: {
                     width: 768,
-                    slidesPerView: 2
+                    slidesPerView: 2,
                   }
                 }}
                 navigation={{
@@ -388,8 +366,8 @@ export default function Home() {
                 }}
 
                 onBeforeInit={(swiper) => {
-                  (swiper.params.navigation.prevEl = navPrevButton.current),
-                    (swiper.params.navigation.nextEl = navNextButton.current);
+                  (swiper.params.navigation.prevEl = navPrevButton.current);
+                  (swiper.params.navigation.nextEl = navNextButton.current);
                 }}
               >
                 <SwiperSlide >
@@ -411,7 +389,7 @@ export default function Home() {
                   <TestimonialCard data={testimonial}></TestimonialCard>
                 </SwiperSlide>
               </Swiper>
-              <div className="text-primary-blue">
+              <div className="text-primary-blue max-md:hidden">
                 <button
                   className="absolute top-1/2 -translate-y-1/2 left-0 -translate-x-1/4 rotate-90"
                   ref={navPrevButton}
@@ -432,7 +410,7 @@ export default function Home() {
           </div>
         </article>
         <article className="flex center justify-between center py-32 max-lg:flex-col gap-8 max-lg:items-center max-md:px-8">
-          <section className="pt-12 pb-10 border-y-8 text-center font-nexaSlab flex-1 w-1/2 lg:max-w-xs mx-auto border-white self-start  ">
+          <section className="heading flex-1 w-1/2 lg:max-w-xs border-white self-start  ">
             <h2 className="pb-2 text-4xl text-primary-blue uppercase">FAQ</h2>
           </section>
           <div className="px-8">

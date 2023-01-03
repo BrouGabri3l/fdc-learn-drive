@@ -1,0 +1,10 @@
+.card{
+    @apply text-center items-center p-8 h-full flex flex-col gap-4 border-solid border-secondary-gray-medium border bg-white
+}
+.card-testimonial{
+    @apply p-8 border-2 border-secondary-gray-medium before:block bg-white before:border-2 before:border-terciary-orange before:w-full
+}
+.card-faq{
+    @apply flex flex-col pl-4 pb-6
+}
+

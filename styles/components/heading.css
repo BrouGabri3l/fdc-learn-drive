@@ -1,0 +1,5 @@
+.heading{
+   @apply pt-12 pb-10 border-y-8 text-center font-nexaSlab max-w-lg lg:max-w-3xl mx-auto}
+.heading-text{
+    @apply pb-2 text-4xl text-primary-blue uppercase
+}
