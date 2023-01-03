@@ -127,7 +127,7 @@ export default function Home() {
       </Head>
       <div>
         <Header />
-        <article className="bg-primary-black-blue text-white">
+        <article className="bg-primary-black-blue text-white max-md:px-8">
           <div className="center flex max-lg:flex-col py-16 gap-24 justify-around text-3xl">
             <div className="">
               <h1 className="font-black font-nexaSlab uppercase">
@@ -163,7 +163,7 @@ export default function Home() {
           {/* <Canvas></Canvas> */}
         </article>
         {/* Seção dos cards */}
-        <article className="pt-14 relative overflow-x-clip ">
+        <article className="pt-14 relative overflow-x-clip max-md:px-8">
           <div className="center relative z-10 mb-48">
             {/* //Heading */}
             <article className="pt-12 pb-10 border-y-8 text-center font-nexaSlab max-w-lg lg:max-w-3xl mx-auto border-white">
@@ -181,10 +181,10 @@ export default function Home() {
                 modules={[Navigation, Pagination, Scrollbar, A11y, Grid]}
                 slidesPerView={1.1}
                 spaceBetween={24}
+                autoHeight={false}
                 breakpoints={{
                   768:{
                     grid:{fill:'row',rows:3},
-                    autoHeight:false,
                     slidesPerView:2,
                   },
             
@@ -236,7 +236,7 @@ export default function Home() {
           </div>
         </article>
         {/*  */}
-        <article className="bg-primary-gray-dark relative pt-44 overflow-x-hidden -z-1 text-white">
+        <article className="bg-primary-gray-dark relative pt-44 overflow-x-hidden -z-1 text-white max-md:px-8">
           <div className="relative z-10">
             <section className="pt-12 pb-10 border-y-8 text-center font-nexaSlab max-w-lg lg:max-w-3xl mx-auto border-[#686366]">
               <h2 className="pb-2 text-4xl text-primary-blue uppercase">
@@ -317,7 +317,7 @@ export default function Home() {
               </Button>
             </section>
             <section className="flex gap-16 items-stretch max-lg:flex-col mx-auto max-w-3xl  px-12 py-14 mb-20  bg-secondary-gray-medium text-primary-gray-dark">
-              <div className="flex flex-1 items-end">
+              <div className="flex flex-1 items-end self-center">
                 <h3 className="before:content-['']  before:absolute before:w-1/2 before:h-2 before:-top-4 before:bg-terciary-orange relative font-nexaSlab  font">
                   Ranking e Certificações
                 </h3>
@@ -328,17 +328,33 @@ export default function Home() {
                 <img src={EquisAccredited.src} alt="" className="h-16" />
               </div>
             </section>
-            <div className="flex ">
-              <img src={Rectangle1.src} alt="" className="flex-1" />
-              <img src={Rectangle2.src} alt="" className="flex-1" />
-              <img src={Rectangle3.src} alt="" className="flex-1" />
-            </div>
+              <Swiper
+                modules={[Navigation, Pagination, Scrollbar, A11y, Grid]}
+                spaceBetween={0}
+                breakpoints={{
+                  768: {
+                    spaceBetween:0,
+                    slidesPerView:3,
+                  },
+            
+                }}
+              >
+                <SwiperSlide>
+                  <img src={Rectangle1.src} alt="" />
+                </SwiperSlide>
+                <SwiperSlide>
+                  <img src={Rectangle2.src} alt="" />
+                </SwiperSlide>
+                <SwiperSlide>
+                  <img src={Rectangle3.src} alt="" />
+                </SwiperSlide>
+              </Swiper>
           </div>
           <div className="absolute bottom-1 left-1/2 -translate-x-1/2">
             <FDC className="h-[634px] text-[#686366] z-1" />
           </div>
         </article>
-        <article className="py-28 bg-white relative overflow-hidden">
+        <article className="py-28 bg-white relative overflow-hidden max-md:px-8">
           <div className="relative z-10">
             <section className="pt-12 pb-10 border-y-8 text-center font-nexaSlab max-w-lg lg:max-w-3xl mx-auto border-secondary-gray-medium">
               <h2 className="pb-2 text-4xl text-primary-blue uppercase">
@@ -397,14 +413,14 @@ export default function Home() {
               </Swiper>
               <div className="text-primary-blue">
                 <button
-                  className="absolute top-1/2 -translate-y-1/2 left-0 -translate-x-1/2 rotate-90"
+                  className="absolute top-1/2 -translate-y-1/2 left-0 -translate-x-1/4 rotate-90"
                   ref={navPrevButton}
                 >
                   <DownArrow className="h-8" />
                 </button>
                 <button
                   ref={navNextButton}
-                  className="absolute top-1/2 -translate-y-1/2 right-0 translate-x-1/2 -rotate-90"
+                  className="absolute top-1/2 -translate-y-1/2 right-0 translate-x-1/4 -rotate-90"
                 >
                   <DownArrow className="h-8" />
                 </button>
@@ -415,9 +431,9 @@ export default function Home() {
             <FDC className="h-[634px] text-secondary-gray-medium z-1" />
           </div>
         </article>
-        <article className="flex center justify-between center py-32 max-lg:flex-col gap-8 max-lg:items-center">
+        <article className="flex center justify-between center py-32 max-lg:flex-col gap-8 max-lg:items-center max-md:px-8">
           <section className="pt-12 pb-10 border-y-8 text-center font-nexaSlab flex-1 w-1/2 lg:max-w-xs mx-auto border-white self-start  ">
-            <h2 className="pb-2 text-4xl text-primary-blue uppercase">FAQ</h2>ç
+            <h2 className="pb-2 text-4xl text-primary-blue uppercase">FAQ</h2>
           </section>
           <div className="px-8">
             <ol className="list-decimal flex flex-col marker:text-terciary-orange marker:font-bold divide-y divide-terciary-gray-blue divide-solid">
@@ -440,7 +456,7 @@ export default function Home() {
           </div>
         </article>
       </div>
-      <article className="bg-primary-black-blue  text-white">
+      <article className="bg-primary-black-blue  text-white max-md:px-8">
         <section className="center max-w-lg py-32">
           <h2 className="font-nexaSlab text-2xl pb-8">
             Transforme os gaps do seu negócio em oportunidades com a FDC
