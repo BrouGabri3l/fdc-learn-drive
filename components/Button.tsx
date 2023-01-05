@@ -11,7 +11,7 @@ function Button(props: PropsWithChildren<ButtonProps>) {
 
   return (
     <button className={`btn ${variant} ${className || ""}`}>
-      <span className="py-3 flex-grow text-center">{children}</span>
+      <span className="py-3 flex-grow text-center leading-6 text-base" >{children}</span>
       {Icon && (
         <span
           className={`flex items-center justify-center p-3 ${

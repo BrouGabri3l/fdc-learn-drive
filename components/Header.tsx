@@ -9,8 +9,8 @@ export default function Header() {
         setIsActive(!isActive)
     }
     return (
-        <header className="px-16 py-6 bg-white">
-            <div className="center flex justify-between align-center">
+        <header className="px-16 py-4 bg-white">
+            <div className="center flex justify-between items-center">
                 <Logo />
                 <nav className="flex gap-4 max-lg:hidden" >
                     <Button theme="outline">Retomar</Button>

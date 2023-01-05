@@ -49,15 +49,21 @@ body {
 .swiper-slide{
   @apply h-auto  !important
 }
-.padrao{
-  @apply w-full bg-white 
+.swiper-custom,.swiper-custom-inside{ 
+  @apply flex justify-center pt-4 w-11/12
+}
+.swiper-custom-inside{
+  @apply absolute bottom-2 z-10
 }
 a {
   color: inherit;
   text-decoration: none;
 }
-.swiper-custom-bullet{
-  @apply w-2 h-2 block bg-primary-gray-dark 
+.swiper-bullet-custom,.swiper-bullet-custom-inside{
+  @apply w-2 h-2 block rounded-2xl mx-1 bg-primary-gray-dark transition-all
+}
+.swiper-bullet-custom-active,.swiper-bullet-custom-inside-active{
+  @apply bg-terciary-orange w-4
 }
 * {
   box-sizing: border-box;

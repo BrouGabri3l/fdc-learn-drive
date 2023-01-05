@@ -33,11 +33,14 @@ import { Navigation, Pagination, Scrollbar, A11y, Grid } from "swiper";
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
+import "swiper/css/pagination"
 import "swiper/css/scrollbar";
 import "swiper/css/grid";
 import Canvas from "../components/Canvas";
 import Footer from "../components/Footer";
 import InfoCard from "../components/InfoCard";
+import AnimatedCanvas from "../components/AnimatedCanvas";
+import CustomSwiper from "../components/CustomSwiper";
 
 export default function Home() {
   const list = [
@@ -115,6 +118,19 @@ export default function Home() {
       </>
     ),
   };
+  const draw = (context) => {
+    const canvas = context.canvas
+    const finalPoint = canvas.width
+    context.beginPath()
+    context.translate(0.5, 0.5);
+    context.fillStyle = "white"
+    context.moveTo(0, canvas.height)
+    context.lineTo(finalPoint * 0.9, canvas.height * 0.6)
+    context.lineTo(finalPoint, 0)
+    context.lineTo(finalPoint, canvas.height)
+    context.fill()
+
+  }
   // const swiper = useSwiper();
   const navPrevButton = useRef<HTMLButtonElement>(null);
   const navNextButton = useRef<HTMLButtonElement>(null);
@@ -127,16 +143,16 @@ export default function Home() {
       </Head>
       <div>
         <Header />
-        <article className="bg-primary-black-blue text-white max-md:px-8">
-          <div className="center flex max-lg:flex-col py-16 gap-24 justify-around text-3xl items-center">
-            <div className="">
+        <article className="bg-primary-black-blue relative text-white max-md:px-8">
+          <div className="center flex max-lg:flex-col py-16 gap-24  justify-around text-3xl items-center">
+            <div className="leading-10 text-3xl">
               <h1 className="font-black font-nexaSlab uppercase">
                 Corporate Learn & Drive: Sua academia de gestão
               </h1>
               <h2 className="font-nexaSlab font-light">
                 Para empresas que querem transformar gaps em oportunidades
               </h2>
-              <section className="text-lg pt-6">
+              <section className="text-lg leading-6 pt-6">
                 <p>
                   Descubra os gaps do seu negócio com o apoio da FDC e crie
                   trilhas de desenvolvimento específicas para a sua empresa. Com
@@ -148,7 +164,7 @@ export default function Home() {
                   formato que você nunca viu.
                 </p>
               </section>
-              <div className="relative text-2xl mx-6 my-14">
+              <div className="relative text-2xl leading-8 mx-6 my-14">
                 <p className="before:content-[''] before:absolute before:w-1 before:h-full  before:-left-6 pb-6  before:bg-terciary-orange">
                   Cadastre-se agora mesmo e faça a{" "}
                   <strong>avaliação de maturidade</strong> da sua empresa
@@ -160,71 +176,70 @@ export default function Home() {
               <img src={KV.src} alt="" />
             </div>
           </div>
+          {/* <div className=" w-full h-full absolute bottom-0">
+            <AnimatedCanvas />
+          </div>
+          <div className="absolute w-full bottom-0">
+            <Canvas draw={draw} />
+          </div> */}
           {/* <Canvas></Canvas> */}
         </article>
         {/* Seção dos cards */}
-        <article className="pt-14 relative overflow-x-clip max-md:px-8">
-          <div className="center relative z-10 mb-48">
+        <article className="pt-14 relative overflow-x-clip ">
+          <div className="center relative z-10 max-md:px-8">
             {/* //Heading */}
-            <section className="heading border-white">
-              <h2 className="heading-text text-primary-blue">
+            <section className="heading border-white ">
+              <h2 className="heading-text text-[40px] font-light  text-primary-blue">
                 Sua empresa é única
               </h2>
-              <p className="text-primary-black-blue font-bold">
+              <p className="text-primary-black-blue font-bold leading-6 text-lg">
                 {" "}
                 É por isso que a jornada dela também tem de ser
               </p>
             </section>
-            {/* //card list */}
-            <ul className="max-w-5xl mx-auto pt-12">
-              <Swiper
-                modules={[Navigation, Pagination, Scrollbar, A11y, Grid]}
-                slidesPerView={1.1}
-                pagination={{
-                  type: 'bullets',
-                  bulletClass: 'swiper-custom-bullet',
-                  bulletActiveClass:'swiper-custom-bullet-active',
-                  el: ".padrao"
-                }}
-                spaceBetween={24}
-                autoHeight={false}
-                breakpoints={{
-                  768: {
-                    grid: { fill: 'row', rows: 3 },
-                    slidesPerView: 2,
-                  },
+          </div>
+          {/* //card list */}
+          <ul className="max-w-5xl mx-auto pt-12 mb-48 max-md:pl-12 md:px-8">
+            <CustomSwiper
+              modules={[Navigation, Pagination, Scrollbar, A11y, Grid]}
+              slidesPerView={1.1}
+              swiperName="custom"
+              spaceBetween={24}
+              breakpoints={{
+                768: {
+                  grid: { fill: 'row', rows: 3 },
+                  slidesPerView: 2,
+                },
 
-                }}
-              >
+              }}
+            >
+              <SwiperSlide>
+                <li className="basis-1/3 flex ">
+                  <section className="flex flex-col gap-2 justify-center text-primary-gray-dark">
+                    <p>
+                      Avaliamos as <strong>lacunas do seu negócio</strong> para
+                      sugerir os conteúdos que precisam ser trabalhados e isso faz
+                      toda a diferença.
+                    </p>
+                    <p>
+                      Seu time ainda pode adicionar módulos de interesse de acordo
+                      com a cultura e as necessidades pontuais da organização,
+                      formando uma <strong> grade curricular flexível.</strong>
+                    </p>
+                  </section>
+                </li>
+              </SwiperSlide>
+              {/* //cards */}
+              {list.map((item, index) => (
                 <SwiperSlide>
-                  <li className="basis-1/3 flex ">
-                    <section className="flex flex-col gap-2 justify-center text-primary-gray-dark">
-                      <p>
-                        Avaliamos as <strong>lacunas do seu negócio</strong> para
-                        sugerir os conteúdos que precisam ser trabalhados e isso faz
-                        toda a diferença.
-                      </p>
-                      <p>
-                        Seu time ainda pode adicionar módulos de interesse de acordo
-                        com a cultura e as necessidades pontuais da organização,
-                        formando uma <strong> grade curricular flexível.</strong>
-                      </p>
-                    </section>
+                  <li className="basis-1/3 h-full" key={index}>
+                    <Card Icon={item.icon}>{item.text}</Card>
                   </li>
                 </SwiperSlide>
-                {/* //cards */}
-                {list.map((item, index) => (
-                  <SwiperSlide>
-                    <li className="basis-1/3 h-full" key={index}>
-                      <Card Icon={item.icon}>{item.text}</Card>
-                    </li>
-                  </SwiperSlide>
-                ))}
-                <div className="padrao">
-                </div>
-              </Swiper>
-            </ul>
-          </div>
+              ))}
+              
+            </CustomSwiper>
+          </ul>
           <div className="relative z-10 max-sm:pt-48">
             <img
               src={LeftImage.src}
@@ -265,7 +280,6 @@ export default function Home() {
               </div>
               <section className="flex flex-col gap-y-8 max-w-3xl mx-auto ">
                 <div className="flex gap-6 max-lg:flex-col-reverse max-lg:px-8">
-                  
                   <InfoCard strongColor="bg-terciary-orange" className="flex-grow" strongText="1 Milhão">de executivos capacitados em programas</InfoCard>
                   <InfoCard strongColor="bg-terciary-orange" className="flex-grow" strongText="1 Milhão">de executivos capacitados em programas</InfoCard>
                   <InfoCard strongColor="bg-terciary-orange" className="flex-grow" strongText="1 Milhão">de executivos capacitados em programas</InfoCard>
@@ -302,16 +316,16 @@ export default function Home() {
               </div>
             </section>
           </div>
-          <Swiper
+          <CustomSwiper
             modules={[Navigation, Pagination, Scrollbar, A11y, Grid]}
             spaceBetween={0}
+            swiperName="custom-inside"
             pagination
             breakpoints={{
               768: {
                 spaceBetween: 0,
                 slidesPerView: 3,
               },
-
             }}
           >
             <SwiperSlide>
@@ -325,7 +339,7 @@ export default function Home() {
             <SwiperSlide>
               <img src={Rectangle3.src} alt="" className="w-full" />
             </SwiperSlide>
-          </Swiper>
+          </CustomSwiper>
 
           <div className="absolute bottom-1 left-1/2 -translate-x-1/2">
             <FDC className="h-[634px] text-[#686366] z-1" />
@@ -345,9 +359,10 @@ export default function Home() {
               </p>
             </section>
             <section className="center px-8 relative">
-              <Swiper
+              <CustomSwiper
                 modules={[Navigation, Pagination, Scrollbar, A11y]}
                 spaceBetween={16}
+                swiperName="custom"
                 slidesPerView={1}
                 pagination
                 breakpoints={{
@@ -388,7 +403,7 @@ export default function Home() {
                 <SwiperSlide>
                   <TestimonialCard data={testimonial}></TestimonialCard>
                 </SwiperSlide>
-              </Swiper>
+              </CustomSwiper>
               <div className="text-primary-blue max-md:hidden">
                 <button
                   className="absolute top-1/2 -translate-y-1/2 left-0 -translate-x-1/4 rotate-90"

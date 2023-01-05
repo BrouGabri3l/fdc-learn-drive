@@ -1,15 +1,31 @@
-import { useEffect } from "react"
+import { useEffect, useRef } from "react"
 
-const usaCanvas = (draw)=>{
-    const canvasRef = null
-    useEffect(()=>{
+const useCanvas = (draw, options = {}) => {
+    const canvasRef = useRef<HTMLCanvasElement>(null)
+    useEffect(() => {
         const canvas = canvasRef.current
-        const context = canvas.getContext("2d")
-        const render = ()=>{
-            draw(context)
+        const context = canvas.getContext(options.context || "2d")
+        const handleResize=()=>{
+            context.canvas.width = canvas.parentElement.offsetWidth
+            context.canvas.height = canvas.parentElement.offsetHeight
         }
+        handleResize()
+        const render = () => {
+            draw(context)
+            window.requestAnimationFrame(render)
+        }
+        
+        window.addEventListener('resize',()=>{
+            handleResize()
+            render()
+        })
         render()
-    },[draw])
+
+    }, [draw])
     return canvasRef
 }
+
+
+
 export default useCanvas
+
