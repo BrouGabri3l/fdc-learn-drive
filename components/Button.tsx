@@ -18,7 +18,7 @@ function Button(props: PropsWithChildren<ButtonProps>) {
             theme == "primary" && "btn-icon-bg"
           }`}
         >
-          <Icon />
+          <Icon className="w-5"/>
         </span>
       )}
     </button>

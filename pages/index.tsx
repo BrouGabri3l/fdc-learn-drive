@@ -9,6 +9,8 @@ import {
   PeopleIcon,
   HatIcon,
   DownArrow,
+  NextIcon,
+  BottomFigure
 } from "../components/icons";
 import Header from "../components/Header";
 import { Card } from "../components/Card";
@@ -28,7 +30,6 @@ import KV from "/public/KV.png";
 import Rectangle1 from "/public/Rectangle21.png";
 import Rectangle2 from "/public/Rectangle22.png";
 import Rectangle3 from "/public/Rectangle23.png";
-
 import { Navigation, Pagination, Scrollbar, A11y, Grid } from "swiper";
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 import "swiper/css";
@@ -118,20 +119,6 @@ export default function Home() {
       </>
     ),
   };
-  const draw = (context) => {
-    const canvas = context.canvas
-    const finalPoint = canvas.width
-    context.beginPath()
-    context.translate(0.5, 0.5);
-    context.fillStyle = "white"
-    context.moveTo(0, canvas.height)
-    context.lineTo(finalPoint * 0.9, canvas.height * 0.6)
-    context.lineTo(finalPoint, 0)
-    context.lineTo(finalPoint, canvas.height)
-    context.fill()
-
-  }
-  // const swiper = useSwiper();
   const navPrevButton = useRef<HTMLButtonElement>(null);
   const navNextButton = useRef<HTMLButtonElement>(null);
   return (
@@ -143,16 +130,16 @@ export default function Home() {
       </Head>
       <div>
         <Header />
-        <article className="bg-primary-black-blue relative text-white max-md:px-8">
-          <div className="center flex max-lg:flex-col py-16 gap-24  justify-around text-3xl items-center">
-            <div className="leading-10 text-3xl">
+        <article className="bg-primary-black-blue relative text-white max-md:px-8 overflow-hidden ">
+          <div className="max-w-[1366px] mx-auto flex max-lg:flex-col pt-16 xl:gap-[107px] max-xl:px-6 pl-16 pr-6 text-3xl">
+            <section className="leading-[44.8px] text-[32px] z-10">
               <h1 className="font-black font-nexaSlab uppercase">
                 Corporate Learn & Drive: Sua academia de gestão
               </h1>
               <h2 className="font-nexaSlab font-light">
                 Para empresas que querem transformar gaps em oportunidades
               </h2>
-              <section className="text-lg leading-6 pt-6">
+              <div className="text-lg leading-[25.2px] pt-6">
                 <p>
                   Descubra os gaps do seu negócio com o apoio da FDC e crie
                   trilhas de desenvolvimento específicas para a sua empresa. Com
@@ -163,30 +150,41 @@ export default function Home() {
                   sua disposição. A excelência educacional de sempre, em um
                   formato que você nunca viu.
                 </p>
-              </section>
-              <div className="relative text-2xl leading-8 mx-6 my-14">
-                <p className="before:content-[''] before:absolute before:w-1 before:h-full  before:-left-6 pb-6  before:bg-terciary-orange">
-                  Cadastre-se agora mesmo e faça a{" "}
-                  <strong>avaliação de maturidade</strong> da sua empresa
+              </div>
+              <section className="relative text-2xl leading-[33.6px] mx-8 my-[60px] max-lg:hidden">
+                <p className="before:content-[''] before:absolute before:w-1 before:h-full  before:-left-8 pb-6  before:bg-terciary-orange">
+                  Cadastre-se e faça a{" "}
+                  <strong>avaliação de maturidade</strong> da sua empresa <strong>gratuitamente.</strong>
                 </p>
                 <Button theme="secondary">Quero começar agora</Button>
-              </div>
-            </div>
-            <div className="shrink-0 max-w-xl">
-              <img src={KV.src} alt="" />
-            </div>
+              </section>
+            </section>
+            <figure className="shrink-0 z-10 max-w-xl self-center">
+              <img src={KV.src} alt="" className="" />
+            </figure>
+            <section className="relative text-2xl leading-[33.6px] mx-8 my-[60px] lg:hidden">
+              <p className="before:content-[''] before:absolute before:w-1 before:h-full  before:-left-8 pb-6  before:bg-terciary-orange">
+                Cadastre-se e faça a{" "}
+                <strong>avaliação de maturidade</strong> da sua empresa <strong>gratuitamente.</strong>
+              </p>
+              <Button theme="secondary">Quero começar agora</Button>
+            </section>
           </div>
-          {/* <div className=" w-full h-full absolute bottom-0">
+          <div className=" w-full h-full absolute bottom-0">
             <AnimatedCanvas />
           </div>
-          <div className="absolute w-full bottom-0">
-            <Canvas draw={draw} />
-          </div> */}
-          {/* <Canvas></Canvas> */}
+          <section className="pb-44 animate-bounce max-lg:hidden w-full">
+            <button className="w-6 mx-auto block">
+              <NextIcon className="text-terciary-orange rotate-90" />
+            </button>
+          </section>
+          <section className="absolute bottom-0 w-full">
+            <BottomFigure className="" />
+          </section>
         </article>
         {/* Seção dos cards */}
-        <article className="pt-14 relative overflow-x-clip ">
-          <div className="center relative z-10 max-md:px-8">
+        <article className="pt-14 relative overflow-x-clip  mx-auto">
+          <div className="center relative z-10 max-md:px-8 lg:max-w-[820px]">
             {/* //Heading */}
             <section className="heading border-white ">
               <h2 className="heading-text text-[40px] font-light  text-primary-blue">
@@ -199,7 +197,7 @@ export default function Home() {
             </section>
           </div>
           {/* //card list */}
-          <ul className="max-w-5xl mx-auto pt-12 mb-48 max-md:pl-12 md:px-8">
+          <ul className="mx-auto pt-12 mb-48 max-md:pl-12 md:px-8 lg:max-w-[820px]">
             <CustomSwiper
               modules={[Navigation, Pagination, Scrollbar, A11y, Grid]}
               slidesPerView={1.1}
@@ -237,7 +235,7 @@ export default function Home() {
                   </li>
                 </SwiperSlide>
               ))}
-              
+
             </CustomSwiper>
           </ul>
           <div className="relative z-10 max-sm:pt-48">
