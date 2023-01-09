@@ -17,14 +17,15 @@ const AnimatedCanvas = (props) => {
     const drawPoint = (point, context) => {
       context.beginPath();
       context.fillStyle = pointColor || 'white'
-      context.arc(point.x, point.y, 1, 0, 2 * Math.PI);
+      context.arc(point.x, point.y, 8, 0, 2 * Math.PI);
       context.fill();
     };
     const drawLine = (point, other, d, context) => {
       context.beginPath();
+      context.lineWidth = 2
       context.moveTo(point.x, point.y);
       context.lineTo(other.x, other.y);
-      context.strokeStyle = `rgba(255,255,255, ${Math.abs(
+      context.strokeStyle = lineColor ?? `rgba(255,255,255, ${Math.abs(
         d / CONNECT_DISTANCE - 1
       )})`;
       context.stroke();

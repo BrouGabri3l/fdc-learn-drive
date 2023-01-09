@@ -13,7 +13,7 @@ export default function InfoCard(props:PropsWithChildren<InfoCardProps>) {
             <strong className={`infocard-strong ${strongColor}`}>
                 {strongText}
             </strong>
-            {children}
+            <span>{children}</span>
         </p>
     )
 }

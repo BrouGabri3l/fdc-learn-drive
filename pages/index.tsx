@@ -20,13 +20,10 @@ import TestimonialCard, {
 import { useRef, useState } from "react";
 import FaqCard from "../components/FaqCard";
 import FDC from "/public/FDC.svg";
-import RightImage from "/public/RightImage.png";
-import CenterImage from "/public/CenterImage.png";
-import LeftImage from "/public/LeftImage.png";
+
 import EquisAccredited from "/public/EquisAccredited.png";
 import FTImage from "/public/FT.png";
 import MBA from "/public/MBA.png";
-import KV from "/public/KV.png";
 import Rectangle1 from "/public/Rectangle21.png";
 import Rectangle2 from "/public/Rectangle22.png";
 import Rectangle3 from "/public/Rectangle23.png";
@@ -42,55 +39,10 @@ import Footer from "../components/Footer";
 import InfoCard from "../components/InfoCard";
 import AnimatedCanvas from "../components/AnimatedCanvas";
 import CustomSwiper from "../components/CustomSwiper";
-
+import Webdoor from '../components/LP/Webdoor'
+import Cards from '../components/LP/Cards'
 export default function Home() {
-  const list = [
-    {
-      text: (
-        <>
-          <strong>Learn</strong>: mais de <strong>220 módulos</strong>,
-          distribuídos em 7 dimensões empresariais
-        </>
-      ),
-      icon: AcademyIcon,
-    },
-    {
-      text: (
-        <>
-          <strong>Drive</strong>: transposição do conhecimento para a prática,
-          com <strong>metodologia exclusiva FDC</strong>
-        </>
-      ),
-      icon: IdeaIcon,
-    },
-    {
-      text: (
-        <>
-          <strong>Relatórios gerenciais</strong> para acompanhar o engajamento
-          do time
-        </>
-      ),
-      icon: GraphicIcon,
-    },
-    {
-      text: (
-        <>
-          Desenvolvimento <strong>Blended Learning,</strong> com turmas de até
-          30 pessoas
-        </>
-      ),
-      icon: PeopleIcon,
-    },
-    {
-      text: (
-        <>
-          Conteúdos exclusivos, seguindo o padrão de{" "}
-          <strong>excelência da FDC</strong>
-        </>
-      ),
-      icon: HatIcon,
-    },
-  ];
+  
   const testimonial = {
     text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo reiciendis quasi, fugit velit deserunt ex aut nesciunt tempore odit et asperiores non illum nam tempora odio rerum sapiente amet unde.",
     author: "Lorem Ipsum",
@@ -130,141 +82,18 @@ export default function Home() {
       </Head>
       <div>
         <Header />
-        <article className="bg-primary-black-blue relative text-white max-md:px-8 overflow-hidden ">
-          <div className="max-w-[1366px] mx-auto flex max-lg:flex-col pt-16 xl:gap-[107px] max-xl:px-6 pl-16 pr-6 text-3xl">
-            <section className="leading-[44.8px] text-[32px] z-10">
-              <h1 className="font-black font-nexaSlab uppercase">
-                Corporate Learn & Drive: Sua academia de gestão
-              </h1>
-              <h2 className="font-nexaSlab font-light">
-                Para empresas que querem transformar gaps em oportunidades
-              </h2>
-              <div className="text-lg leading-[25.2px] pt-6">
-                <p>
-                  Descubra os gaps do seu negócio com o apoio da FDC e crie
-                  trilhas de desenvolvimento específicas para a sua empresa. Com
-                  o programa Corporate Learn & Drive, seu time inicia a jornada
-                  para o futuro com a melhor escola de negócios da América
-                  Latina, cobrindo as principais dimensões necessárias para a
-                  evolução dos negócios - é uma verdadeira academia de gestão à
-                  sua disposição. A excelência educacional de sempre, em um
-                  formato que você nunca viu.
-                </p>
-              </div>
-              <section className="relative text-2xl leading-[33.6px] mx-8 my-[60px] max-lg:hidden">
-                <p className="before:content-[''] before:absolute before:w-1 before:h-full  before:-left-8 pb-6  before:bg-terciary-orange">
-                  Cadastre-se e faça a{" "}
-                  <strong>avaliação de maturidade</strong> da sua empresa <strong>gratuitamente.</strong>
-                </p>
-                <Button theme="secondary">Quero começar agora</Button>
-              </section>
-            </section>
-            <figure className="shrink-0 z-10 max-w-xl self-center">
-              <img src={KV.src} alt="" className="" />
-            </figure>
-            <section className="relative text-2xl leading-[33.6px] mx-8 my-[60px] lg:hidden">
-              <p className="before:content-[''] before:absolute before:w-1 before:h-full  before:-left-8 pb-6  before:bg-terciary-orange">
-                Cadastre-se e faça a{" "}
-                <strong>avaliação de maturidade</strong> da sua empresa <strong>gratuitamente.</strong>
-              </p>
-              <Button theme="secondary">Quero começar agora</Button>
-            </section>
-          </div>
-          <div className=" w-full h-full absolute bottom-0">
-            <AnimatedCanvas />
-          </div>
-          <section className="pb-44 animate-bounce max-lg:hidden w-full">
-            <button className="w-6 mx-auto block">
-              <NextIcon className="text-terciary-orange rotate-90" />
-            </button>
-          </section>
-          <section className="absolute bottom-0 w-full">
-            <BottomFigure className="" />
-          </section>
-        </article>
+        <Webdoor />
         {/* Seção dos cards */}
-        <article className="pt-14 relative overflow-x-clip  mx-auto">
-          <div className="center relative z-10 max-md:px-8 lg:max-w-[820px]">
-            {/* //Heading */}
-            <section className="heading border-white ">
-              <h2 className="heading-text text-[40px] font-light  text-primary-blue">
-                Sua empresa é única
-              </h2>
-              <p className="text-primary-black-blue font-bold leading-6 text-lg">
-                {" "}
-                É por isso que a jornada dela também tem de ser
-              </p>
-            </section>
-          </div>
-          {/* //card list */}
-          <ul className="mx-auto pt-12 mb-48 max-md:pl-12 md:px-8 lg:max-w-[820px]">
-            <CustomSwiper
-              modules={[Navigation, Pagination, Scrollbar, A11y, Grid]}
-              slidesPerView={1.1}
-              swiperName="custom"
-              spaceBetween={24}
-              breakpoints={{
-                768: {
-                  grid: { fill: 'row', rows: 3 },
-                  slidesPerView: 2,
-                },
-
-              }}
-            >
-              <SwiperSlide>
-                <li className="basis-1/3 flex ">
-                  <section className="flex flex-col gap-2 justify-center text-primary-gray-dark">
-                    <p>
-                      Avaliamos as <strong>lacunas do seu negócio</strong> para
-                      sugerir os conteúdos que precisam ser trabalhados e isso faz
-                      toda a diferença.
-                    </p>
-                    <p>
-                      Seu time ainda pode adicionar módulos de interesse de acordo
-                      com a cultura e as necessidades pontuais da organização,
-                      formando uma <strong> grade curricular flexível.</strong>
-                    </p>
-                  </section>
-                </li>
-              </SwiperSlide>
-              {/* //cards */}
-              {list.map((item, index) => (
-                <SwiperSlide>
-                  <li className="basis-1/3 h-full" key={index}>
-                    <Card Icon={item.icon}>{item.text}</Card>
-                  </li>
-                </SwiperSlide>
-              ))}
-
-            </CustomSwiper>
-          </ul>
-          <div className="relative z-10 max-sm:pt-48">
-            <img
-              src={LeftImage.src}
-              alt=""
-              className="absolute right-1/2 max-md:right-1/4 max-sm:left-1/4 max-sm:bottom-1/3 z-10  -translate-x-1/3 opacity-90 -bottom-1/3"
-            />
-            <img src={CenterImage.src} alt="" className="mx-auto " />
-            <img
-              src={RightImage.src}
-              alt=""
-              className="absolute left-1/2 translate-x-8 opacity-90 max-sm:top-1/4 max-sm:-left-5  -top-24"
-            />
-          </div>
-          {/* //FDC background */}
-          <div className="absolute bottom-1 left-1/2 -translate-x-1/2">
-            <FDC className="h-[634px] text-secondary-gray-medium z-1" />
-          </div>
-        </article>
+        <Cards />
         {/*  */}
         <article className="bg-primary-gray-dark relative pt-44 overflow-x-hidden -z-1 text-white ">
-          <div className="relative z-10 max-md:px-8">
+          <div className="relative z-10 max-md:px-8 lg:max-w-article center">
             <section className="heading border-[#686366]">
-              <h2 className="heading-text text-primary-blue uppercase">
+              <h2 className="heading-text text-primary-blue uppercase font-light">
                 Sobre a fdc
               </h2>
             </section>
-            <section className=" ">
+            <section className="">
               <div className="max-w-lg mx-auto">
                 <p className="py-12">
                   A FDC impulsiona o desenvolvimento das organizações com uma
@@ -278,14 +107,16 @@ export default function Home() {
               </div>
               <section className="flex flex-col gap-y-8 max-w-3xl mx-auto ">
                 <div className="flex gap-6 max-lg:flex-col-reverse max-lg:px-8">
+                  <InfoCard strongColor="bg-terciary-orange" className="flex-grow" strongText="45 Anos">de história de sucesso e liderança</InfoCard>
                   <InfoCard strongColor="bg-terciary-orange" className="flex-grow" strongText="1 Milhão">de executivos capacitados em programas</InfoCard>
-                  <InfoCard strongColor="bg-terciary-orange" className="flex-grow" strongText="1 Milhão">de executivos capacitados em programas</InfoCard>
-                  <InfoCard strongColor="bg-terciary-orange" className="flex-grow" strongText="1 Milhão">de executivos capacitados em programas</InfoCard>
+                  <InfoCard strongColor="bg-terciary-orange" className="flex-grow" strongText="700">docentes com notoriedade nacional e internacional</InfoCard>
+                  <InfoCard strongColor="bg-terciary-orange" className="flex-grow" strongText="900">empresas cliente
+                    atendidas por ano</InfoCard>
                 </div>
                 <div className="flex gap-6 max-lg:flex-col max-lg:px-8">
-                  <InfoCard strongColor="bg-terciary-orange" className="flex-grow" strongText="+900">empresas cliente atendidas por ano</InfoCard>
-                  <InfoCard strongColor="bg-terciary-orange" className="flex-grow" strongText="+900">empresas cliente atendidas por ano</InfoCard>
-                  <InfoCard strongColor="bg-terciary-orange" className="flex-grow" strongText="+900">empresas cliente atendidas por ano</InfoCard>
+                  <InfoCard strongColor="bg-terciary-orange" className="" strongText="+37 mil">executivos participantes por ano</InfoCard>
+                  <InfoCard strongColor="bg-terciary-orange" className="" strongText="1ª em Educação">Executiva na América Latina há 15 anos consecutivos*</InfoCard>
+                  <InfoCard strongColor="bg-terciary-orange" className="" strongText="9ª melhor">escola de negócios do mundo*</InfoCard>
                 </div>
               </section>
               <div className="mx-auto max-w-lg pt-9">
@@ -301,7 +132,7 @@ export default function Home() {
                 Conheça Mais
               </Button>
             </section>
-            <section className="flex gap-16 items-stretch max-lg:flex-col mx-auto max-w-3xl  px-12 py-14 mb-20  bg-secondary-gray-medium text-primary-gray-dark">
+            <section className="flex gap-16 items-stretch max-lg:flex-col mx-auto max-w-3xl  px-12 py-14 mb-20  bg-white text-primary-gray-dark">
               <div className="flex flex-1 items-end self-center">
                 <h3 className="before:content-['']  before:absolute before:w-1/2 before:h-2 before:-top-4 before:bg-terciary-orange relative font-nexaSlab  font">
                   Ranking e Certificações
@@ -344,8 +175,8 @@ export default function Home() {
           </div>
         </article>
         <article className="py-28 bg-white relative overflow-hidden max-md:px-8">
-          <div className="relative z-10">
-            <section className="heading border-secondary-gray-medium">
+          <div className="relative z-10 ">
+            <section className="heading border-secondary-gray-medium max-w-article center">
               <h2 className="heading-text text-primary-blue">
                 Sua empresa em boa companhia
               </h2>
@@ -447,8 +278,8 @@ export default function Home() {
           </div>
         </article>
       </div>
-      <article className="bg-primary-black-blue  text-white max-md:px-8">
-        <section className="center max-w-lg py-32">
+      <article className="bg-primary-black-blue relative text-white max-md:px-8">
+        <section className="center max-w-lg py-32 relative z-10">
           <h2 className="font-nexaSlab text-2xl pb-8">
             Transforme os gaps do seu negócio em oportunidades com a FDC
           </h2>
@@ -460,6 +291,9 @@ export default function Home() {
             <Button theme="secondary">Quero começar agora</Button>
           </div>
         </section>
+        <div className="absolute w-full h-full bottom-0 z-0">
+          <AnimatedCanvas pointColor="rgba(42,159,188,0.75)" lineColor="rgba(42,159,188,0.75)" points="8" />
+        </div>
       </article>
       <Footer />
     </div>

@@ -2,5 +2,5 @@
    @apply pt-12 pb-10 border-y-8 text-center font-nexaSlab  mx-auto 
    }
 .heading-text{
-    @apply pb-3 text-4xl text-primary-blue uppercase 
+    @apply text-[40px] text-primary-blue uppercase 
 }

@@ -37,6 +37,16 @@ module.exports = {
       fontFamily: {
         openSans: ['var(--font-openSans)'],
         nexaSlab: ["Nexa Slab"],
+      },
+      lineHeight:{
+        heading: "44.8px",
+        paragraph:"33.6px"
+      },
+      fontSize:{
+        heading:"32px"
+      },
+      maxWidth:{
+        'article':'820px'
       }
     },
   },
