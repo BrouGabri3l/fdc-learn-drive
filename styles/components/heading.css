@@ -1,6 +1,6 @@
 .heading{
-   @apply pt-12 pb-10 border-y-8 text-center font-nexaSlab  mx-auto 
+   @apply pt-10 pb-8 sm:pt-12 sm:pb-10 border-y-8 text-center font-nexaSlab  mx-auto 
    }
 .heading-text{
-    @apply text-[40px] text-primary-blue uppercase 
+    @apply text-2xl leading-[28.8px] sm:text-[40px] text-primary-blue uppercase 
 }

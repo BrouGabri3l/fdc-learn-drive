@@ -40,7 +40,7 @@ module.exports = {
       },
       lineHeight:{
         heading: "44.8px",
-        paragraph:"33.6px"
+        paragraph:"1.42em"
       },
       fontSize:{
         heading:"32px"

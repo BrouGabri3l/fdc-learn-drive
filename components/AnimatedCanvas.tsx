@@ -30,7 +30,7 @@ const AnimatedCanvas = (props) => {
       )})`;
       context.stroke();
     };
-    const TOTAL_POINTS = pointQuantity || 20;
+    const TOTAL_POINTS = pointQuantity ?? 20;
     let points = [];
     const loop = (context) => {
       const canvas = context.canvas;
