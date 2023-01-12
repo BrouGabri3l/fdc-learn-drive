@@ -7,6 +7,7 @@ import AnimatedCanvas from "../components/AnimatedCanvas";
 import Webdoor from '../components/LP/Webdoor'
 import Cards from '../components/LP/Cards'
 import About from '../components/LP/About'
+import Faq from "../components/LP/Faq";
 export default function Home() {
   return (
     <div>
@@ -21,7 +22,7 @@ export default function Home() {
       <Cards />
       <About />
       <Testimonials />
-
+      <Faq />
       <section className="bg-primary-black-blue relative overflow-hidden text-white max-md:px-8">
         <article className="center max-w-lg py-32 relative z-10">
           <h2 className="font-nexaSlab text-2xl pb-8">

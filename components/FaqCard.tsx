@@ -15,10 +15,10 @@ export default function FaqCard(props: PropsWithChildren<FaqCardProps>) {
         <>
             <div className="card-faq">
                 <button className="btn-faq" onClick={handleOpen}>
-                    <h3 className="text-primary-gray-dark">{title}</h3>
-                    <DownArrow className={`w-8 ${isOpen && "rotate-180"} text-primary-blue`} />
+                    <h3 className="text-primary-gray-dark leading-paragraph">{title}</h3>
+                    <DownArrow className={`h-8 ${isOpen && "rotate-180"} text-primary-blue flex-shrink-0`} />
                 </button>
-                <span className={`${!isOpen ? "hidden" : ""} ml-5 py-6 inline-block max-w-xl text-primary-gray-dark`}>
+                <span className={`${!isOpen ? "hidden" : ""} inline-block max-w-xl text-primary-gray-dark`}>
                     {children}
                 </span>
             </div>

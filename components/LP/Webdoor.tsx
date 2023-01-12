@@ -11,7 +11,7 @@ export default function Webdoor() {
   return (
     <section className="text-white overflow-hidden">
       <div className='bg-primary-black-blue relative md:px-8'>
-        <div className="max-w-[1366px] center flex max-lg:flex-col max-lg:gap-2 pt-8 sm:pt-16 xl:gap-[104px] max-xl:px-6 pl-16 pr-6 text-3xl">
+        <div className="max-w-[1366px] center flex max-lg:flex-col items-center lg-items-start gap-3 pt-8 sm:pt-16 xl:gap-[104px] max-xl:px-6 pl-16 pr-6 text-3xl">
           <article className="sm:leading-heading leading-paragraph text-2xl sm:text-heading  z-10">
             <h1 className="font-black font-nexaSlab uppercase pr-14">
               Corporate Learn & Drive: Sua academia de gestão
@@ -59,7 +59,7 @@ export default function Webdoor() {
           <BottomFigure className="" />
         </article>
       </div>
-      <article className="relative text-base leading-[22.4px] mx-8 pl-4 lg:hidden -mt-20 text-primary-black-blue">
+      <article className="relative text-base leading-[22.4px] mx-8 pl-4 lg:hidden -mt-20   md:mt-10 text-primary-black-blue">
         <p className="before:content-[''] before:absolute before:w-1 before:h-full before:-left-8 before:mx-6 pb-6 before:bg-terciary-orange">
           Cadastre-se e faça a{" "}
           <strong>avaliação de maturidade</strong> da sua empresa <strong>gratuitamente.</strong>

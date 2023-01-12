@@ -6,7 +6,7 @@ import FDC from '/public/FDC.svg';
 import { DownArrow } from '../icons';
 
 export default function Testimonials() {
-    
+
     const testimonial = {
         text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo reiciendis quasi, fugit velit deserunt ex aut nesciunt tempore odit et asperiores non illum nam tempora odio rerum sapiente amet unde.",
         author: "Lorem Ipsum",
@@ -15,14 +15,14 @@ export default function Testimonials() {
     const navPrevButton = useRef<HTMLButtonElement>(null);
     const navNextButton = useRef<HTMLButtonElement>(null);
     return (
-        <section className="py-28 bg-white relative overflow-hidden max-md:px-8">
+        <section className="py-16 bg-white relative overflow-hidden max-md:px-6 ">
             <div className="relative z-10 ">
                 <section className="heading border-secondary-gray-medium max-w-article center">
                     <h2 className="heading-text text-primary-blue">
                         Sua empresa em boa companhia
                     </h2>
                 </section>
-                <section className="mx-auto max-w-lg py-12 text-primary-gray-dark">
+                <section className="mx-auto max-w-lg py-10 text-primary-gray-dark leading-paragraph">
                     <p>
                         Confira os depoimentos de executivos e colaboradores que já
                         participaram de programas empresariais da FDC
